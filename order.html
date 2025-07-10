@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order - Foodie Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="custom.css" />
+  <style>
+    /* Navbar Custom Toggle Styles (No JS) */
+    .menu-toggle {
+      display: none;
+    }
+
+    .navbar-menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        border: none;
+        background: none;
+      }
+
+      .navbar-menu {
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      #menu-toggle:checked ~ .navbar-menu {
+        display: flex;
+      }
+
+      .navbar-menu a {
+        padding: 8px 0;
+      }
+    }
+
+    /* Form Section */
+    .form-section {
+      padding: 50px 20px;
+      background-color: #f8f9fa;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .form-control, .form-check-input {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Without JavaScript -->
+  <nav class="bg-light shadow-sm p-3">
+    <div class="container d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between">
+      <a class="navbar-brand fw-bold" href="index.html">Foodie Hub</a>
+
+      <!-- Mobile Toggle -->
+      <label for="menu-toggle" class="menu-toggle d-md-none"><i class="bi bi-list"></i></label>
+      <input type="checkbox" id="menu-toggle" hidden />
+
+      <!-- Menu -->
+      <div class="navbar-menu d-md-flex align-items-center">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="restaurants.html">Restaurants</a>
+        <a class="nav-link active" href="order.html">Order</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Order Form Section -->
+  <section class="form-section">
+    <div class="container">
+      <h2>Place Your Order</h2>
+      <form action="#" method="post">
+        <div class="form-grid">
+          <div>
+            <label for="name" class="form-label">Customer Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="07XX XXX XXX" required />
+
+            <label for="restaurant" class="form-label">Select Restaurant</label>
+            <select id="restaurant" class="form-select" required>
+              <option selected disabled>Select a restaurant</option>
+              <option>Burger</option>
+              <option>Kabab</option>
+              <option>Sushi</option>
+              <option>Spicy Food</option>
+              <option>Pizza</option>
+              <option>Vegan Salads</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="form-label">Select Menu Items</label>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="burger" name="menu[]" value="Burger">
+              <label class="form-check-label" for="burger">🍔 Burger</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="kabab" name="menu[]" value="Kabab">
+              <label class="form-check-label" for="kabab">🍢 Kabab</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="sushi" name="menu[]" value="Sushi">
+              <label class="form-check-label" for="sushi">🍣 Sushi</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="spicy" name="menu[]" value="Spicy Food">
+              <label class="form-check-label" for="spicy">🌶 Spicy Food</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="pizza" name="menu[]" value="Pizza">
+              <label class="form-check-label" for="pizza">🍕 Pizza</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="salad" name="menu[]" value="Salad">
+              <label class="form-check-label" for="salad">🥗 Salad</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn">Submit Order</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2025 Foodie Hub. All rights reserved.</p>
+      <div>
+        <i class="bi bi-facebook me-3"></i>
+        <i class="bi bi-twitter me-3"></i>
+        <i class="bi bi-instagram"></i>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foodie Hub - Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="custom.css" />
+  <style>
+    .about-hero {
+      background: url('images/contact-bg.jpg') center center/cover no-repeat;
+      height: 250px;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .about-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+      }
+    }
+
+    /* Buttons hover effect */
+    .btn-primary {
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer social icons */
+    footer a i {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Foodie Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="restaurants.html">Restaurants</a></li>
+          <li class="nav-item"></li> <a class="nav-link" href="order.html">Order</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="about-hero d-flex justify-content-center align-items-center">
+    <h1>Contact Us</h1>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <h2 class="mb-4 text-center">We’d Love to Hear From You!</h2>
+        <form action="#" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+            <input type="text" id="subject" class="form-control" placeholder="Subject of your message" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+            <textarea id="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light py-4 text-center text-md-start">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div>
+        <p class="mb-1"><i class="bi bi-envelope me-2"></i>contact@foodiehub.com</p>
+        <p class="mb-1"><i class="bi bi-telephone me-2"></i>‪+93 700 123 456‬</p>
+        <p><i class="bi bi-geo-alt me-2"></i>Kabul, Afghanistan</p>
+      </div>
+      <div>
+        <a href="#" class="text-decoration-none me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-decoration-none me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-decoration-none"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
