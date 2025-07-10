@@ -4,130 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Order - Foodie Hub</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="custom.css" />
+
   <style>
-    /* Navbar Custom Toggle Styles (No JS) */
-    .menu-toggle {
-      display: none;
+    /* اگر می‌خواهی کادر دور دکمه منو حذف بشه */
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+      border: none;
     }
 
-    .navbar-menu {
-      display: flex;
-      gap: 15px;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 2.2rem;
-        border: none;
-        background: none;
-        position: absolute;
-        top: 16px;
-        right: 20px;
-      }
-
-      .navbar-menu {
-        display: none;
-        flex-direction: column;
-        margin-top: 60px;
-      }
-
-      #menu-toggle:checked ~ .navbar-menu {
-        display: flex;
-      }
-
-      .navbar-menu a {
-        padding: 8px 0;
-      }
-    }
-
-    /* Form Section */
-    .form-section {
-      padding: 50px 20px;
-      background-color: #f8f9fa;
-    }
-
-    .form-section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .form-control,
-    .form-check-input,
-    .form-select {
-      margin-bottom: 20px;
-    }
-
-    /* Improve dropdown size */
-    .form-select {
-      font-size: 1rem;
-      padding: 12px;
-      height: 50px;
-    }
-
-    @media (max-width: 768px) {
-      .form-select {
-        font-size: 1.1rem;
-        height: 55px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-    }
-
-    .submit-btn {
-      display: block;
-      margin: 0 auto;
-      margin-top: 20px;
+    /* کمی بزرگتر کردن دکمه منو */
+    .navbar-toggler {
+      font-size: 1.4rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Navbar Without JavaScript -->
-  <nav class="bg-light shadow-sm p-3 position-relative">
-    <div class="container d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between position-relative">
-      <a class="navbar-brand fw-bold" href="index.html">Foodie Hub</a>
-
-      <!-- Mobile Toggle Icon -->
-      <label for="menu-toggle" class="menu-toggle d-md-none"><i class="bi bi-list"></i></label>
-      <input type="checkbox" id="menu-toggle" hidden />
-
-      <!-- Menu -->
-      <div class="navbar-menu d-md-flex align-items-center">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="restaurants.html">Restaurants</a>
-        <a class="nav-link active" href="order.html">Order</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+  <!-- Navbar مشابه بقیه صفحات -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-danger" href="index.html">Foodie Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="restaurants.html">Restaurants</a></li>
+          <li class="nav-item"><a class="nav-link active" href="order.html">Order</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
   </nav>
 
-  <!-- ✅ Order Form Section -->
-  <section class="form-section">
-    <div class="container">
-      <h2>Place Your Order</h2>
-      <form action="#" method="post">
-        <div class="form-grid">
-          <div>
-            <label for="name" class="form-label">Customer Name</label>
-            <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+  <!-- Order Form Section -->
+  <section class="form-section py-5" style="background-color: #f8f9fa;">
+    <div class="container" style="max-width: 900px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+      <h2 class="text-center mb-5 text-danger fw-bold">Place Your Order</h2>
+      <form action="#" method="post" novalidate>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <label for="name" class="form-label fw-semibold">Customer Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required />
 
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" id="phone" class="form-control" placeholder="07XX XXX XXX" required />
+            <label for="phone" class="form-label fw-semibold mt-3">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="07XX XXX XXX" required />
 
-            <label for="restaurant" class="form-label">Select Restaurant</label>
-            <select id="restaurant" class="form-select" required>
+            <label for="restaurant" class="form-label fw-semibold mt-3">Select Restaurant</label>
+            <select id="restaurant" name="restaurant" class="form-select" required>
               <option selected disabled>Select a restaurant</option>
               <option>Burger</option>
               <option>Kabab</option>
@@ -138,57 +75,43 @@
             </select>
           </div>
 
-          <div>
-            <label class="form-label">Select Menu Items</label>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Select Menu Items</label>
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="burger" name="menu[]" value="Burger">
+              <input class="form-check-input" type="checkbox" id="burger" name="menu[]" value="Burger" />
               <label class="form-check-label" for="burger">🍔 Burger</label>
             </div>
-
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="kabab" name="menu[]" value="Kabab">
+              <input class="form-check-input" type="checkbox" id="kabab" name="menu[]" value="Kabab" />
               <label class="form-check-label" for="kabab">🍢 Kabab</label>
             </div>
-
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="sushi" name="menu[]" value="Sushi">
+              <input class="form-check-input" type="checkbox" id="sushi" name="menu[]" value="Sushi" />
               <label class="form-check-label" for="sushi">🍣 Sushi</label>
             </div>
-
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="spicy" name="menu[]" value="Spicy Food">
+              <input class="form-check-input" type="checkbox" id="spicy" name="menu[]" value="Spicy Food" />
               <label class="form-check-label" for="spicy">🌶 Spicy Food</label>
             </div>
-
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="pizza" name="menu[]" value="Pizza">
+              <input class="form-check-input" type="checkbox" id="pizza" name="menu[]" value="Pizza" />
               <label class="form-check-label" for="pizza">🍕 Pizza</label>
             </div>
-
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="salad" name="menu[]" value="Salad">
+              <input class="form-check-input" type="checkbox" id="salad" name="menu[]" value="Salad" />
               <label class="form-check-label" for="salad">🥗 Salad</label>
             </div>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary submit-btn">Submit Order</button>
+        <button type="submit" class="btn btn-danger mt-4 px-5 py-2 fw-bold d-block mx-auto">Submit Order</button>
       </form>
     </div>
   </section>
 
-  <!-- ✅ Footer -->
-  <footer class="bg-dark text-white text-center py-4">
-    <div class="container">
-      <p>&copy; 2025 Foodie Hub. All rights reserved.</p>
-      <div>
-        <i class="bi bi-facebook me-3"></i>
-        <i class="bi bi-twitter me-3"></i>
-        <i class="bi bi-instagram"></i>
-      </div>
-    </div>
-  </footer>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
